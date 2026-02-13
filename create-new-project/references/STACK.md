@@ -4,8 +4,8 @@
 - Next.js (App Router) + React + TypeScript
 - Tailwind CSS + shadcn/ui para UI consistente y rápida de iterar
 
-## Backend (cómo “funciona”)
-En este stack, el “backend” principal vive dentro de Next.js en Vercel:
+## Backend (cómo "funciona")
+En este stack, el "backend" principal vive dentro de Next.js en Vercel:
 
 1) **API Routes / Route Handlers (Next.js)**
    - Carpeta: `src/app/api/**`
@@ -13,11 +13,11 @@ En este stack, el “backend” principal vive dentro de Next.js en Vercel:
    - Usalos para:
      - lógica de negocio (crear pedidos, validar, etc.)
      - integraciones con terceros (webhooks, APIs externas)
-     - exponer una “Public API” para que otras apps creen pedidos
+     - exponer una "Public API" para que otras apps creen pedidos
 
 2) **Supabase**
    - Postgres (DB), Auth (usuarios), Storage (archivos), Realtime (opcional)
-   - La DB es “fuente de verdad”. Idealmente aplicás RLS en Supabase.
+   - La DB es "fuente de verdad". Idealmente aplicás RLS en Supabase.
 
 ## Comunicación con Supabase
 - Desde UI server-side (Server Components / Route Handlers): usar cliente server (cookies o service role).

@@ -9,6 +9,8 @@ fi
 
 PM="${PM:-pnpm}" # env override: PM=npm
 USE_SUPABASE_LOCAL="${USE_SUPABASE_LOCAL:-true}" # true|false
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SKILL_DIR="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 
 command -v node >/dev/null || { echo "Missing: node"; exit 1; }
 command -v git >/dev/null || { echo "Missing: git"; exit 1; }
@@ -301,7 +303,7 @@ if command -v supabase >/dev/null && [[ "$USE_SUPABASE_LOCAL" == "true" ]]; then
     cat > "$MIG" <<'EOF'
 -- Baseline schema
 EOF
-    cat ../skills/create-new-project/references/DB_SCHEMA.sql >> "$MIG" 2>/dev/null || true
+    cat "${SKILL_DIR}/references/DB_SCHEMA.sql" >> "$MIG" 2>/dev/null || true
   fi
 else
   echo "==> Supabase CLI not found or disabled. Skipping supabase init."

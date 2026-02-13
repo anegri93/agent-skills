@@ -1,12 +1,6 @@
 ---
 name: create-new-project
 description: Scaffold a production-ready Next.js (App Router) + TypeScript + Tailwind + shadcn/ui + Supabase (Postgres/Auth/Storage) boilerplate, deployable to Vercel. Includes Supabase migrations, RLS-ready multi-tenant schema, and example API routes (internal + external).
-license: MIT
-compatibility: Intended for Cursor. Requires Node 20+, Git, and one package manager (pnpm recommended). Optional: Supabase CLI for local dev/migrations; Vercel CLI for linking/deploy.
-metadata:
-  author: anegri93
-  version: "1.0.0"
-  stack: nextjs-supabase-vercel
 ---
 
 # create-new-project
@@ -23,7 +17,7 @@ Use this skill whenever the user wants to start a new web app using the standard
 Ask only what is necessary:
 1) Project name (kebab-case recommended)
 2) Package manager: pnpm (default) / npm
-3) Supabase mode: 
+3) Supabase mode:
    - "local-first" (init Supabase locally + migrations)
    - "cloud-only" (create env placeholders; user will link later)
 
@@ -32,8 +26,8 @@ If the user explicitly wants external integrations, confirm:
 
 ## Execution plan (do this in order)
 1) Create the project folder using the script (pick the right OS reminder):
-   - macOS/Linux/Git-Bash/WSL: `bash skills/create-new-project/scripts/create-new-project.sh <name>`
-   - Windows PowerShell: `powershell -ExecutionPolicy Bypass -File skills/create-new-project/scripts/create-new-project.ps1 -Name <name>`
+   - macOS/Linux/Git-Bash/WSL: `bash scripts/create-new-project.sh <name>`
+   - Windows PowerShell: `powershell -ExecutionPolicy Bypass -File scripts/create-new-project.ps1 -Name <name>`
 
 2) Ensure the scaffold includes:
    - Next.js app (App Router) + Tailwind
@@ -58,7 +52,7 @@ If the user explicitly wants external integrations, confirm:
 ## Guardrails
 - Do NOT add next-themes/react-day-picker unless versions are compatible with the chosen React/Next baseline.
 - Do NOT commit `.env.local`, Supabase service role keys, or Vercel tokens.
-- Keep the project “boring”: simple, predictable, production-ready defaults.
+- Keep the project "boring": simple, predictable, production-ready defaults.
 
 ## References
 - See `references/STACK.md` for backend/API model on Vercel + Supabase.
